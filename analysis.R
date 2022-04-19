@@ -142,7 +142,11 @@ fm1 %>%
   filter(date >= start_date & date <= end_date) %>% 
   ggplot(aes(date, rate_unemployment_diff)) +
   geom_area() +
-  facet_wrap(~single_parent)
+  facet_wrap(~single_parent) +
+  ylab("Difference from Vic unemployment rate (%pt)")
+
+ggsave("output/unemployment difference.png")
+
 
 
 
@@ -151,7 +155,11 @@ fm1 %>%
   filter(date >= start_date & date <= end_date) %>% 
   ggplot(aes(date, rate_participation_diff)) +
   geom_area() +
-  facet_wrap(~single_parent)
+  facet_wrap(~single_parent) +
+  ylab("Difference from Vic participation rate (%pt)")
+
+ggsave("output/participation difference.png")
+
 
 
 
@@ -160,5 +168,8 @@ fm1 %>%
   filter(date >= start_date & date <= end_date) %>% 
   ggplot(aes(date, rate_emp_to_pop_diff)) +
   geom_area() +
-  facet_wrap(~single_parent)
+  facet_wrap(~single_parent) +
+  ylab("Difference from Vic emp to pop rate (%pt)")
 
+
+ggsave("output/employment to population difference.png")
